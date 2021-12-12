@@ -7,9 +7,9 @@ namespace Properties
     /// </summary>
     public class Card
     {
-        private readonly string seed;
-        private readonly string name;
-        private readonly int ordinal;
+        private readonly string _seed;
+        private readonly string _name;
+        private readonly int    _ordinal;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Card"/> class.
@@ -19,46 +19,76 @@ namespace Properties
         /// <param name="ordinal">the ordinal number of the card.</param>
         public Card(string name, string seed, int ordinal)
         {
-            this.name = name;
-            this.ordinal = ordinal;
-            this.seed = seed;
+            _name = name;
+            _ordinal = ordinal;
+            _seed = seed;
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Card"/> class.
         /// </summary>
         /// <param name="tuple">the informations about the card as a tuple.</param>
-        internal Card(Tuple<string, string, int> tuple) : this(tuple.Item1, tuple.Item2, tuple.Item3)
+        internal Card(Tuple<string, string, int> tuple) 
+            : this(tuple.Item1, tuple.Item2, tuple.Item3)
         {
         }
 
-        // TODO improve
-        public string GetSeed()
+        /// <summary>
+        /// Method that gets the seed of the card.
+        /// </summary>
+        public string Seed
         {
-            return this.seed;
+            get => _seed;
         }
 
-        // TODO improve
-        public string GetName()
+        /// <summary>
+        /// Method that gets the name of a card.
+        /// </summary>
+        public string Name
         {
-            return this.name;
+            get => _name;
         }
 
-        // TODO improve
-        public int GetOrdinal()
+        /// <summary>
+        /// Method that gets the ordinal number of a card.
+        /// </summary>
+        public int Ordinal
         {
-            return this.ordinal;
+            get => _ordinal;
         }
 
         /// <inheritdoc cref="object.ToString"/>
         public override string ToString()
         {
             // TODO understand string interpolation
-            return $"{this.GetType().Name}(Name={this.GetName()}, Seed={this.GetSeed()}, Ordinal={this.GetOrdinal()})";
+            return $"{this.GetType().Name}(Name={this.Name}, Seed={this.Seed}, Ordinal={this.Ordinal})";
         }
 
-        // TODO generate Equals(object obj)
+        /// <inheritdoc cref="object.Equals"/>
+        public override bool Equals(object obj)
+        {
+            if(obj is null)
+            {
+                return false;
+            }
 
-        // TODO generate GetHashCode()
+            if(obj.GetType() != this.GetType())
+            {
+                return false;
+            }
+
+            if(obj == this)
+            {
+                return true;
+            }
+
+            return this.Equals(obj as Card);
+        }
+
+        /// <inheritdoc cref="object.GetHashCode" />
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(_name, _seed, _ordinal);
+        }
     }
 }
