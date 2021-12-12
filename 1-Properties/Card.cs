@@ -34,7 +34,7 @@ namespace Properties
         }
 
         /// <summary>
-        /// Method that gets the seed of the card.
+        /// Gets the seed of the card.
         /// </summary>
         public string Seed
         {
@@ -42,7 +42,7 @@ namespace Properties
         }
 
         /// <summary>
-        /// Method that gets the name of a card.
+        /// Gets the name of a card.
         /// </summary>
         public string Name
         {
@@ -50,7 +50,7 @@ namespace Properties
         }
 
         /// <summary>
-        /// Method that gets the ordinal number of a card.
+        /// Gets the ordinal number of a card.
         /// </summary>
         public int Ordinal
         {
@@ -60,7 +60,6 @@ namespace Properties
         /// <inheritdoc cref="object.ToString"/>
         public override string ToString()
         {
-            // TODO understand string interpolation
             return $"{this.GetType().Name}(Name={this.Name}, Seed={this.Seed}, Ordinal={this.Ordinal})";
         }
 
