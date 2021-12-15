@@ -21,30 +21,30 @@ namespace Calculus
     {
         static void Main(string[] args)
         {
-            // var calc = new Calculator();
-            //
-            // Console.WriteLine(calc.ToString()); // null, null
-            //
-            // calc.Value = new Complex(1, 0); // 1
-            //
-            // Console.WriteLine(calc.ToString()); // 1, null
-            //
-            // calc.Operation = Calculator.OperationPlus;
-            //
-            // Console.WriteLine(calc.ToString()); // null, +
-            //
-            // calc.Value = new Complex(0, 1); // i
-            //
-            // Console.WriteLine(calc.ToString()); // i, +
-            //
-            // calc.Operation = Calculator.OperationMinus;
-            //
-            // Console.WriteLine(calc.ToString()); // null, -
-            //
-            // calc.Value = new Complex(2, 0);
-            //
-            // Console.WriteLine(calc.ToString()); // 2, -
-            //
+            var calc = new Calculator();
+            
+            Console.WriteLine(calc.ToString()); // null, null
+            
+            calc.Value = new Complex(1, 0); // 1
+            
+            Console.WriteLine(calc.ToString()); // 1, null
+            
+            calc.Operation = Calculator.OperationPlus;
+            
+            Console.WriteLine(calc.ToString()); // null, +
+            
+            calc.Value = new Complex(0, 1); // i
+            
+            Console.WriteLine(calc.ToString()); // i, +
+            
+            calc.Operation = Calculator.OperationMinus;
+            
+            Console.WriteLine(calc.ToString()); // null, -
+            
+            calc.Value = new Complex(2, 0);
+            
+            Console.WriteLine(calc.ToString()); // 2, -
+            
             // calc.ComputeResult();
             //
             // Console.WriteLine(calc.ToString()); // -1 + i, null
