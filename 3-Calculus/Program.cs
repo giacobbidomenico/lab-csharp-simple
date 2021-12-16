@@ -45,15 +45,15 @@ namespace Calculus
             
             Console.WriteLine(calc.ToString()); // 2, -
             
-            // calc.ComputeResult();
-            //
-            // Console.WriteLine(calc.ToString()); // -1 + i, null
-            //
-            // Console.WriteLine(calc.Value); // -1 + i
-            //
-            // calc.Reset();
-            //
-            // Console.WriteLine(calc.ToString()); // null, null
+            calc.ComputeResult();
+            
+            Console.WriteLine(calc.ToString()); // -1 + i, null
+            
+            Console.WriteLine(calc.Value); // -1 + i
+            
+            calc.Reset();
+            
+            Console.WriteLine(calc.ToString()); // null, null
         }
     }
 }
